@@ -1,0 +1,32 @@
+set(CMAKE_MFC_FLAG 0)
+add_compile_definitions(-D_CRT_SECURE_NO_WARNINGS)
+
+set(HDF5_ROOT_DIR "C:/Program Files/HDF_Group/HDF5-1.12.1-win64")
+set(HDF5_INCLUDE_DIR "${HDF5_ROOT_DIR}/include")
+set(HDF5_LIB_DIR "${HDF5_ROOT_DIR}/lib")
+include_directories(${HDF5_INCLUDE_DIR})
+
+if (CMAKE_BUILD_TYPE MATCHES "Debug")
+    set(LIB_FILE_NAME_SUFFIX "_D")
+else ()
+    set(LIB_FILE_NAME_SUFFIX "")
+endif ()
+
+set(HDF5_LIB_LINK_TYPE static) # `static` or `dllImport`
+if (${HDF5_LIB_LINK_TYPE} STREQUAL "static")
+    set(LIB_FILE_NAME_PREFIX "lib")
+elseif (${HDF5_LIB_LINK_TYPE} STREQUAL "dllImport")
+    set(LIB_FILE_NAME_PREFIX "")
+else ()
+    message(FATAL_ERROR "Unsupported link type: ${HDF5_LIB_LINK_TYPE}")
+endif ()
+
+find_library(LIBHDF5_HL_CPP NAMES "${LIB_FILE_NAME_PREFIX}hdf5_hl_cpp${LIB_FILE_NAME_SUFFIX}.lib" PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
+find_library(LIBHDF5_HL NAMES "${LIB_FILE_NAME_PREFIX}hdf5_hl${LIB_FILE_NAME_SUFFIX}.lib" PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
+find_library(LIBHDF5_CPP NAMES "${LIB_FILE_NAME_PREFIX}hdf5_cpp${LIB_FILE_NAME_SUFFIX}.lib" PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
+find_library(LIBHDF5 NAMES "${LIB_FILE_NAME_PREFIX}hdf5${LIB_FILE_NAME_SUFFIX}.lib" PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
+
+find_library(LIBZ NAMES "libzlib${LIB_FILE_NAME_SUFFIX}.lib" PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
+find_library(LIBSZ NAMES "libsz${LIB_FILE_NAME_SUFFIX}.lib" PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
+find_library(LIBAEC NAMES "libaec${LIB_FILE_NAME_SUFFIX}.lib" PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
+

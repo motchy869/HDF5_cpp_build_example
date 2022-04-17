@@ -8,5 +8,6 @@ int main() {
     printf("Hello, World!\n");
     const std::string fileName("test.h5");
     H5::H5File file(fileName, H5F_ACC_TRUNC);
+    printf("File creation is done.\n");
     return EXIT_SUCCESS;
 }

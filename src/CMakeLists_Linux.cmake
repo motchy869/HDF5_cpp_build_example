@@ -1,4 +1,4 @@
-string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra -Wfatal-errors -Winline -Wold-style-cast -Wredundant-decls -Wshadow -Wswitch-default -Wswitch-enum -Wundef")
+string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra -Wfatal-errors -Winline -Wold-style-cast -Wredundant-decls -Wshadow -Wswitch-default -Wswitch-enum -Wundef -Wunused-variable")
 string(APPEND CMAKE_CXX_FLAGS_DEBUG " -O0 -g -fsanitize=address -fstack-protector -ftrapv")
 string(APPEND CMAKE_CXX_FLAGS_RELEASE " -O3 -DNDEBUG")
 

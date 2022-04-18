@@ -82,8 +82,8 @@ T sinc(const T x) {
  * @brief sinc(sqrt(x1^2+x2^2))
  *
  * @tparam T the data type of input
- * @param x1 x1
- * @param x2 x2
+ * @param[in] x1 x1
+ * @param[in] x2 x2
  * @return sinc(sqrt(x1^2+x2^2))
  */
 template<typename T>

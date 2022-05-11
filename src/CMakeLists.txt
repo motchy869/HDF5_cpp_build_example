@@ -17,6 +17,6 @@ elseif (WIN32)
     include(CMakeLists_Windows.cmake)
 endif ()
 
-set(EXE_FILE_TITLE hdf5_my_example3)
+set(EXE_FILE_TITLE hdf5_my_example)
 add_executable(${EXE_FILE_TITLE} ${PROJECT_SOURCE_DIR}/${EXE_FILE_TITLE}.cpp)
 target_link_libraries(${EXE_FILE_TITLE} ${LIBHDF5_HL_CPP} ${LIBHDF5_HL} ${LIBHDF5_CPP} ${LIBHDF5} ${LIBZ} ${LIBSZ} ${LIBAEC}) # Order sensitive. See [CMake and order dependent linking of shared libraries](https://stackoverflow.com/questions/12204820/cmake-and-order-dependent-linking-of-shared-libraries)

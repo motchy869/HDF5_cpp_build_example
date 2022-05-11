@@ -2,7 +2,7 @@ string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra -Wfatal-errors -Winline -Wold-styl
 string(APPEND CMAKE_CXX_FLAGS_DEBUG " -O0 -g -fsanitize=address -fstack-protector -ftrapv")
 string(APPEND CMAKE_CXX_FLAGS_RELEASE " -O3 -DNDEBUG")
 
-set(HDF5_ROOT_DIR "/usr/local/hdf5-1.12.1")
+set(HDF5_ROOT_DIR "/usr/local/hdf5-1.12.2")
 set(HDF5_INCLUDE_DIR "${HDF5_ROOT_DIR}/include")
 set(HDF5_LIB_DIR "${HDF5_ROOT_DIR}/lib")
 include_directories(${HDF5_INCLUDE_DIR})
@@ -23,5 +23,5 @@ find_library(LIBHDF5_CPP NAMES "libhdf5_cpp.${LIB_FILE_NAME_EXT}" PATHS ${HDF5_L
 find_library(LIBHDF5 NAMES "libhdf5.${LIB_FILE_NAME_EXT}" PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
 
 find_library(LIBZ NAMES libz.a PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
-find_library(LIBSZ NAMES libsz.a PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
+find_library(LIBSZAEC NAMES libszaec.a PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)
 find_library(LIBAEC NAMES libaec.a PATHS ${HDF5_LIB_DIR} NO_DEFAULT_PATH)

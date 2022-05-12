@@ -2,7 +2,7 @@ string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra -Wfatal-errors -Winline -Wold-styl
 string(APPEND CMAKE_CXX_FLAGS_DEBUG " -O0 -g -fsanitize=address -fstack-protector -ftrapv")
 string(APPEND CMAKE_CXX_FLAGS_RELEASE " -O3 -DNDEBUG")
 
-set(HDF5_ROOT_DIR "/usr/local/hdf5-1.12.2")
+set(HDF5_ROOT_DIR "/usr/local/hdf5-1.13.1")
 set(HDF5_INCLUDE_DIR "${HDF5_ROOT_DIR}/include")
 set(HDF5_LIB_DIR "${HDF5_ROOT_DIR}/lib")
 include_directories(${HDF5_INCLUDE_DIR})

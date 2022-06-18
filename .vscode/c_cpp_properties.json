@@ -21,7 +21,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/local/hdf5-1.12.1/include"
+                "/usr/local/hdf5-1.13.1/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

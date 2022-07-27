@@ -7,7 +7,8 @@ endif ()
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_FIND_LIBRARY_PREFIXES lib) # CMake >= 3.20 requires this variable to be set.
+set(CMAKE_FIND_LIBRARY_PREFIXES "") # CMake >= 3.20 requires this variable to be set (but not used in this project).
+set(CMAKE_FIND_LIBRARY_SUFFIXES "") # CMake >= 3.20.2 requires this variable to be set (but not used in this project).
 
 # Set the project name and language.
 project(HDF5MyExample C CXX)
